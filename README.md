@@ -93,7 +93,22 @@ for idx, row in test_data.iterrows():
     acc_count += 1
 print('Accuracy: {:.2f}%'.format(acc_count/test_data.shape[0]*100))
 ```
-
+**Result**
+```
+data4, true:mandarin, predict:mandarin
+data23, true:apple, predict:apple
+data17, true:apple, predict:apple
+data56, true:lemon, predict:lemon
+data37, true:orange, predict:orange
+data12, true:apple, predict:orange
+data52, true:lemon, predict:lemon
+data5, true:mandarin, predict:mandarin
+data24, true:orange, predict:orange
+data36, true:orange, predict:orange
+data44, true:lemon, predict:lemon
+data2, true:apple, predict:apple
+Accuracy: 91.67%
+```
 
 
 
