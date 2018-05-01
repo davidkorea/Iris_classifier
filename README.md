@@ -20,7 +20,68 @@
 
 ![](https://github.com/davidkorea/Iris_classifier/blob/master/images/basic6.png)
 
-# 2. Code
+# 2. 코드 요약
+
+0. preparation
+```php
+DATA_PATH = ''
+SPECIES = ['apple','orange','lemon']
+FEATURE_COL = ['mass','width','heught','color_score']
+```
+1. read data file
+```php
+data_file = pandas.read_csv(DATA_PATH, index_col='') #index_col could be blanck
+```
+2. split data file to Train & Test data
+```php
+train_data, test_data = train_test_split(data_file, test_size=1/5, random_state=20) 
+ # 1/5 of origin data will be set as test data
+```
+3. get each item's feature in the test sample
+```php
+for idx, row in test_data.iterrows():
+  test_sample_feat = row[FEATURE_COL].values
+  pred_label = get_predict(test_sample_feat, train_data)
+```
+test_data.iterrows() DEBUG:
+```
+
+```
+
+4. get_predict()
+```php
+def get_predict(test_sample_feat, train_data):
+  dis_list = []
+  for idx, row in train_data.iterrows():
+    train_sample_feat = row[FEATURE_COL].values
+    dis = euclidean(test_sample_feat, train_sample_feat)
+    dis_list.append(dis)
+  pos = numpy.argmin(dis_list)
+  pred_label = train_data.iloc[pos]['fruit_name']
+  return pred_label
+```
+
+5. accuracy
+```php
+for idx, row in test_data.iterrows():
+  test_sample_feat = row[FEATURE_COL].values
+  pred_label = get_predict(test_sample_feat, train_data)
+  <!-- SAME AS step-3 above--!>
+  true_label = row['fruit_name']
+  
+  print('DATA:{}, true: {}, predict :{}'.format(idx, true_label, pred_label))
+  
+  acc_count = 0
+  if pred_label == true_label:
+    acc_count += 1
+print('Accuracy: {:.2f}%'.format(acc_count/test_data.shape[0]*100))
+```
+
+
+
+
+
+# 3. 코드 분석
 
 ```python
 """
