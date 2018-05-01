@@ -43,7 +43,7 @@ for idx, row in test_data.iterrows():
   test_sample_feat = row[FEATURE_COL].values
   pred_label = get_predict(test_sample_feat, train_data)
 ```
-  test_data.iterrows() DEBUG:
+* test_data.iterrows() DEBUG:
 ```php
 In[2]:est_data.iterrows
 Out[2]: 
@@ -93,7 +93,7 @@ for idx, row in test_data.iterrows():
     acc_count += 1
 print('Accuracy: {:.2f}%'.format(acc_count/test_data.shape[0]*100))
 ```
-  **Result**
+* **Result**
 ```
 data4, true:mandarin, predict:mandarin
 data23, true:apple, predict:apple
