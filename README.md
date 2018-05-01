@@ -63,6 +63,8 @@ Out[2]:
 
 ```
 
+![](https://github.com/davidkorea/Iris_classifier/blob/master/images/color_score.jpg)
+
 4. get_predict()
 ```php
 def get_predict(test_sample_feat, train_data):
