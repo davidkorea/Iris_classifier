@@ -44,7 +44,22 @@ for idx, row in test_data.iterrows():
   pred_label = get_predict(test_sample_feat, train_data)
 ```
 test_data.iterrows() DEBUG:
-```
+```php
+In[2]:est_data.iterrows
+Out[2]: 
+<bound method DataFrame.iterrows of    fruit_name  mass  width  height  color_score
+4    mandarin    84    6.0     4.6         0.79
+23      apple   170    7.6     7.9         0.88
+17      apple   168    7.5     7.6         0.73
+56      lemon   116    5.9     8.1         0.73
+37     orange   154    7.3     7.3         0.79
+12      apple   154    7.0     7.1         0.88
+52      lemon   118    5.9     8.0         0.72
+5    mandarin    80    5.8     4.3         0.77
+24     orange   342    9.0     9.4         0.75
+36     orange   160    7.1     7.6         0.76
+44      lemon   200    7.3    10.5         0.72
+2       apple   176    7.4     7.2         0.60>
 
 ```
 
