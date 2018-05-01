@@ -43,7 +43,7 @@ for idx, row in test_data.iterrows():
   test_sample_feat = row[FEATURE_COL].values
   pred_label = get_predict(test_sample_feat, train_data)
 ```
-test_data.iterrows() DEBUG:
+  test_data.iterrows() DEBUG:
 ```php
 In[2]:est_data.iterrows
 Out[2]: 
@@ -93,7 +93,7 @@ for idx, row in test_data.iterrows():
     acc_count += 1
 print('Accuracy: {:.2f}%'.format(acc_count/test_data.shape[0]*100))
 ```
-**Result**
+  **Result**
 ```
 data4, true:mandarin, predict:mandarin
 data23, true:apple, predict:apple
@@ -147,8 +147,10 @@ def get_pred_label(test_sample_feat, train_data):
         train_sample_feat = row[FEAT_COLS].values //训练集中的一个数据
  
         # 计算距离
-        dis = euclidean(test_sample_feat, train_sample_feat) //测试集的一个数据 与 训练集的一个数据 计算距离
-        dis_list.append(dis) //测试集的一个数据 与 所有训练集数据 距离的 所有值
+        dis = euclidean(test_sample_feat, train_sample_feat) 
+        //测试集的一个数据 与 训练集的一个数据 计算距离
+        dis_list.append(dis) 
+        //测试集的一个数据 与 所有训练集数据 距离的 所有值
  
     # 最小距离对应的位置
     pos = np.argmin(dis_list)
@@ -166,7 +168,8 @@ def main():
     ai_utils.do_eda_plot_for_iris(iris_data) //使用小脚本查看各个特征的分布图
  、
     # 划分数据集
-    train_data, test_data = train_test_split(iris_data, test_size=1/3, random_state=10) //使用已有工具包划分训练/测试数据集
+    train_data, test_data = train_test_split(iris_data, test_size=1/3, random_state=10) 
+    //使用已有工具包划分训练/测试数据集
     
     # 预测对的个数
     acc_count = 0
@@ -177,7 +180,8 @@ def main():
         test_sample_feat = row[FEAT_COLS].values //测试集中的一行数据
  
         # 预测值
-        pred_label = get_pred_label(test_sample_feat, train_data) //测试集的一个数据特征 与 训练集的 每一行数据 特征计算距离
+        pred_label = get_pred_label(test_sample_feat, train_data) 
+        //测试集的一个数据特征 与 训练集的 每一行数据 特征计算距离
         
         # 真实值
         true_label = row['Species']
@@ -194,3 +198,6 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+* EDA result
+![](https://github.com/davidkorea/Iris_classifier/blob/master/iris_eda.png)
